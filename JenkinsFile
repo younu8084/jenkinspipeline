@@ -104,7 +104,12 @@ pipeline{
                 steps
                  { 
                    bamboocollectorall(JSON)
-                   bblog("plans listed successfully,project listed successfully,deploymentprojectdetails showed successfully, deploymentprojectversion details showed successfully, particular plan details showed successfully, latest build result showed successfully",JSON)
+                   bblog("plans listed successfully",JSON)
+                   bblog("project listed successfully",JSON)
+                   bblog("deploymentprojectdetails showed successfully",JSON)
+                   bblog("deploymentprojectversion details showed successfully",JSON)
+                   bblog("particular plan details showed successfully",JSON)
+                   bblog("latest build result showed successfully",JSON)
                    }
                      post{
                        failure{
