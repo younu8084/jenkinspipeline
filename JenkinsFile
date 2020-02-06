@@ -6,7 +6,7 @@ pipeline{
             {
                 steps
                  { 
-                    updatedeployproject(JSON)
+                    bbupdatedeployproject(JSON)
                     
                  }
             }
@@ -14,7 +14,7 @@ pipeline{
             {
                 steps
                  { 
-                    triggerdeploy(JSON)
+                    bbtriggerdeploy(JSON)
                     
                  }
             }
