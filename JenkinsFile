@@ -1,0 +1,63 @@
+@Library('shlib1')_
+pipeline{
+  agent any
+  stages{
+    /* stage('update_Proj')
+            {
+                steps
+                 { 
+                    updatedeployproject(JSON)
+                    
+                 }
+            }
+             stage('triggerdeploy')
+            {
+                steps
+                 { 
+                    triggerdeploy(JSON)
+                    
+                 }
+            }
+             stage('add label')
+            {
+                steps
+                 { 
+                    bbaddlabelbuild(JSON)
+                    
+                 }
+            }
+             stage('addcomment')
+            {
+                steps
+                 { 
+                   bbaddcomment(JSON)
+                    
+                 }
+            }
+             stage('executeallstage')
+            {
+                steps
+                 { 
+                   bbexecuteall(JSON)
+                    
+                 }
+            }
+             stage('deleteproject')
+            {
+                steps
+                 { 
+                   bbdeleteproject(JSON)
+                    
+                 }
+            }*/
+             stage('collector')
+            {
+                steps
+                 { 
+                   bamboocollectorall(JSON)
+                    
+                 }
+            }
+            
+            }
+}
