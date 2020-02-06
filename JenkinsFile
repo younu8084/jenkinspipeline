@@ -21,11 +21,11 @@ pipeline{
                 steps
                  { 
                     bbtriggerdeploy(JSON)
-                    bblog(" deployment project triggered successfully for this deploymentprojectid")
+                    bblog(" deployment project triggered successfully")
                     }
                     post{
                        failure{
-                             bblog("deployment project is not triggered successfullyfor this deploymentprojectid")
+                             bblog("deployment project is not triggered successfully")
                                 }
         
                         }
