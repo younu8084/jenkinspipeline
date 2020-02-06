@@ -8,12 +8,13 @@ pipeline{
                  { 
                     bbupdatedeployproject(JSON)
                     bblog("name updated successfully for the deployment project")
+                    }
                     post{
                           failure{
                                bblog("name is not updated successfully for the deployment project")
                                   }
                         }
-                 }
+                 
             }
              stage('triggerdeploy')
             {
@@ -21,13 +22,14 @@ pipeline{
                  { 
                     bbtriggerdeploy(JSON)
                     bblog(" deployment project triggered successfully for this deploymentprojectid")
+                    }
                     post{
                        failure{
                              bblog("deployment project is not triggered successfullyfor this deploymentprojectid ")
                                 }
         
                         }
-            }
+            
             }
              stage('add label')
             {
@@ -35,6 +37,7 @@ pipeline{
                  { 
                     bbaddlabelbuild(JSON)
                     bblog("label added successfully for the project")
+                    }
                      post{
                        failure{
                              bblog("label not added successfully for the project ")
@@ -43,13 +46,14 @@ pipeline{
                         }
                     
                  }
-            }
+            
              stage('addcomment')
             {
                 steps
                  { 
                    bbaddcomment(JSON)
                    bblog("comment added successfully for the project")
+                   }
                      post{
                        failure{
                              bblog("comment not added successfully for the project ")
@@ -58,7 +62,7 @@ pipeline{
                         }
                     
                     
-                 }
+                 
             }
              stage('executeallstage')
             {
@@ -66,6 +70,7 @@ pipeline{
                  { 
                    bbexecuteall(JSON)
                     bblog("stage executed successfully for the project")
+                    }
                      post{
                        failure{
                              bblog("stage not executed successfully for the project ")
@@ -75,7 +80,7 @@ pipeline{
                     
                     
                     
-                 }
+                
             }
              stage('deleteproject')
             {
@@ -83,6 +88,7 @@ pipeline{
                  { 
                    bbdeleteproject(JSON)
                     bblog("project deleted successfully")
+                    }
                      post{
                        failure{
                              bblog("project not deleted successfully  ")
@@ -91,7 +97,7 @@ pipeline{
                         }
                     
                     
-                 }
+                 
             }
              stage('listingplan')
             {
@@ -99,6 +105,7 @@ pipeline{
                  { 
                    bamboocollectorall(JSON)
                    bblog("plans listed successfully")
+                   }
                      post{
                        failure{
                              bblog("plans not listed successfully  ")
@@ -107,7 +114,7 @@ pipeline{
                         }
                     
                     
-                    }
+                    
                  }
                   stage('listingproject')
             {
@@ -115,6 +122,7 @@ pipeline{
                  { 
                    bamboocollectorall(JSON)
                    bblog(" projects listed successfully")
+                   }
                      post{
                        failure{
                              bblog("project not listed  successfully  ")
@@ -123,7 +131,7 @@ pipeline{
                         }
                     
                     
-                    }
+                    
                  }
                   stage('deployprojectdetails')
             {
@@ -131,6 +139,7 @@ pipeline{
                  { 
                    bamboocollectorall(JSON)
                    bblog("deploymentproject details is showing successfully")
+                   }
                      post{
                        failure{
                              bblog("deploymentproject details is not showing successfully  ")
@@ -140,7 +149,7 @@ pipeline{
                     
                     
                     
-                 }
+                 
                  }
                     stage('deploymentprojectversiondetails')
             {
@@ -148,6 +157,7 @@ pipeline{
                  { 
                    bamboocollectorall(JSON)
                    bblog("deploymentproject version details is showing successfully")
+                   }
                      post{
                        failure{
                              bblog("deploymentproject version details is not showing successfully  ")
@@ -157,7 +167,7 @@ pipeline{
                     
                     
                     
-                 }
+                 
                  }
                     stage('particular plan details')
             {
@@ -165,6 +175,7 @@ pipeline{
                  { 
                    bamboocollectorall(JSON)
                    bblog("particular plan details is showing successfully")
+                   }
                      post{
                        failure{
                              bblog("particular plan details is not showing successfully")
@@ -172,7 +183,7 @@ pipeline{
         
                         }
                     
-                    }
+                    
                     
                  }
                
@@ -182,6 +193,7 @@ pipeline{
                  { 
                    bamboocollectorall(JSON)
                    bblog("latest build result is showing successfully")
+                   }
                      post{
                        failure{
                              bblog("latest build result is not showing successfully  ")
@@ -191,7 +203,7 @@ pipeline{
                     
                     
                     
-                 }
+                 
                  
             }
             
