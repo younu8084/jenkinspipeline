@@ -7,11 +7,11 @@ pipeline{
                 steps
                  { 
                     bbupdatedeployproject(JSON)
-                    bblog("name updated successfully for the deployment project")
+                    bblog("name updated successfully for the deployment project",JSON)
                     }
                     post{
                           failure{
-                               bblog("name is not updated successfully for the deployment project")
+                               bblog("name is not updated successfully for the deployment project",JSON)
                                   }
                         }
                  
@@ -21,11 +21,11 @@ pipeline{
                 steps
                  { 
                     bbtriggerdeploy(JSON)
-                    bblog(" deployment project triggered successfully for this deploymentprojectid")
+                    bblog(" deployment project triggered successfully for this deploymentprojectid",JSON)
                     }
                     post{
                        failure{
-                             bblog("deployment project is not triggered successfullyfor this deploymentprojectid ")
+                             bblog("deployment project is not triggered successfullyfor this deploymentprojectid",JSON)
                                 }
         
                         }
@@ -36,11 +36,11 @@ pipeline{
                 steps
                  { 
                     bbaddlabelbuild(JSON)
-                    bblog("label added successfully for the project")
+                    bblog("label added successfully for the project",JSON)
                     }
                      post{
                        failure{
-                             bblog("label not added successfully for the project ")
+                             bblog("label not added successfully for the project",JSON)
                                 }
         
                         }
@@ -52,11 +52,11 @@ pipeline{
                 steps
                  { 
                    bbaddcomment(JSON)
-                   bblog("comment added successfully for the project")
+                   bblog("comment added successfully for the project",JSON)
                    }
                      post{
                        failure{
-                             bblog("comment not added successfully for the project ")
+                             bblog("comment not added successfully for the project",JSON)
                                 }
         
                         }
@@ -69,11 +69,11 @@ pipeline{
                 steps
                  { 
                    bbexecuteall(JSON)
-                    bblog("stage executed successfully for the project")
+                    bblog("stage executed successfully for the project",JSON)
                     }
                      post{
                        failure{
-                             bblog("stage not executed successfully for the project ")
+                             bblog("stage not executed successfully for the project",JSON)
                                 }
         
                         }
@@ -87,11 +87,11 @@ pipeline{
                 steps
                  { 
                    bbdeleteproject(JSON)
-                    bblog("project deleted successfully")
+                    bblog("project deleted successfully",JSON)
                     }
                      post{
                        failure{
-                             bblog("project not deleted successfully  ")
+                             bblog("project not deleted successfully",JSON)
                                 }
         
                         }
@@ -104,11 +104,11 @@ pipeline{
                 steps
                  { 
                    bamboocollectorall(JSON)
-                   bblog("plans listed successfully")
+                   bblog("plans listed successfully",JSON)
                    }
                      post{
                        failure{
-                             bblog("plans not listed successfully  ")
+                             bblog("plans not listed successfully",JSON)
                                 }
         
                         }
@@ -121,11 +121,11 @@ pipeline{
                 steps
                  { 
                    bamboocollectorall(JSON)
-                   bblog(" projects listed successfully")
+                   bblog(" projects listed successfully",JSON)
                    }
                      post{
                        failure{
-                             bblog("project not listed  successfully  ")
+                             bblog("project not listed  successfully",JSON)
                                 }
         
                         }
@@ -138,11 +138,11 @@ pipeline{
                 steps
                  { 
                    bamboocollectorall(JSON)
-                   bblog("deploymentproject details is showing successfully")
+                   bblog("deploymentproject details is showing successfully",JSON)
                    }
                      post{
                        failure{
-                             bblog("deploymentproject details is not showing successfully  ")
+                             bblog("deploymentproject details is not showing successfully",JSON)
                                 }
         
                         }
@@ -156,11 +156,11 @@ pipeline{
                 steps
                  { 
                    bamboocollectorall(JSON)
-                   bblog("deploymentproject version details is showing successfully")
+                   bblog("deploymentproject version details is showing successfully",JSON)
                    }
                      post{
                        failure{
-                             bblog("deploymentproject version details is not showing successfully  ")
+                             bblog("deploymentproject version details is not showing successfully",JSON)
                                 }
         
                         }
@@ -174,11 +174,11 @@ pipeline{
                 steps
                  { 
                    bamboocollectorall(JSON)
-                   bblog("particular plan details is showing successfully")
+                   bblog("particular plan details is showing successfully",JSON)
                    }
                      post{
                        failure{
-                             bblog("particular plan details is not showing successfully")
+                             bblog("particular plan details is not showing successfully",JSON)
                                 }
         
                         }
@@ -192,11 +192,11 @@ pipeline{
                 steps
                  { 
                    bamboocollectorall(JSON)
-                   bblog("latest build result is showing successfully")
+                   bblog("latest build result is showing successfully",JSON)
                    }
                      post{
                        failure{
-                             bblog("latest build result is not showing successfully  ")
+                             bblog("latest build result is not showing successfully",JSON)
                                 }
         
                         }
