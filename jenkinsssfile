@@ -1,0 +1,128 @@
+@Library('shlib1')_
+pipeline{
+  agent any
+  stages{
+     stage('update_Proj')
+            {
+                steps
+                 { 
+                    bbupdatedeployproject(JSON)
+                    bblog("name updated successfully for the deployment project",JSON)
+                    }
+                    post{
+                          failure{
+                               bblog("name is not updated successfully for the deployment project",JSON)
+                                  }
+                        }
+                 
+            }
+             stage('triggerdeploy')
+            {
+                steps
+                 { 
+                    bbtriggerdeploy(JSON)
+                    bblog(" deployment project triggered successfully for this deploymentprojectid",JSON)
+                    }
+                    post{
+                       failure{
+                             bblog("deployment project is not triggered successfullyfor this deploymentprojectid",JSON)
+                                }
+        
+                        }
+            
+            }
+             stage('add label')
+            {
+                steps
+                 { 
+                    bbaddlabelbuild(JSON)
+                    bblog("label added successfully for the project",JSON)
+                    }
+                     post{
+                       failure{
+                             bblog("label not added successfully for the project",JSON)
+                                }
+        
+                        }
+                    
+                 }
+            
+             stage('addcomment')
+            {
+                steps
+                 { 
+                   bbaddcomment(JSON)
+                   bblog("comment added successfully for the project",JSON)
+                   }
+                     post{
+                       failure{
+                             bblog("comment not added successfully for the project",JSON)
+                                }
+        
+                        }
+                    
+                    
+                 
+            }
+             stage('executeallstage')
+            {
+                steps
+                 { 
+                   bbexecuteall(JSON)
+                    bblog("stage executed successfully for the project",JSON)
+                    }
+                     post{
+                       failure{
+                             bblog("stage not executed successfully for the project",JSON)
+                                }
+        
+                        }
+                    
+                    
+                    
+                
+            }
+             stage('deleteproject')
+            {
+                steps
+                 { 
+                   bbdeleteproject(JSON)
+                    bblog("project deleted successfully",JSON)
+                    }
+                     post{
+                       failure{
+                             bblog("project not deleted successfully",JSON)
+                                }
+        
+                        }
+                    
+                    
+                 
+            }
+             stage('collector')
+            {
+                steps
+                 { 
+                   bamboocollectorall(JSON)
+                   bblog("plans listed successfully",JSON)
+                   bblog("project listed successfully",JSON)
+                   bblog("deploymentprojectdetails showed successfully",JSON)
+                   bblog("deploymentprojectversion details showed successfully",JSON)
+                   bblog("particular plan details showed successfully",JSON)
+                   bblog("latest build result showed successfully",JSON)
+                   }
+                     post{
+                       failure{
+                             bblog("all collector functions are failed",JSON)
+                                }
+        
+                        }
+                    
+                    
+                    
+                 }
+               
+              
+            }
+}
+© 2020 GitHub, Inc.
