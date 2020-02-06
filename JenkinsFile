@@ -2,12 +2,17 @@
 pipeline{
   agent any
   stages{
-    /* stage('update_Proj')
+     stage('update_Proj')
             {
                 steps
                  { 
                     bbupdatedeployproject(JSON)
-                    
+                    bblog("name updated successfullyfor the deployment project")
+                    post{
+                          failure{
+                               bblog("name is not updated successfully for the deployment project")
+                                  }
+                        }
                  }
             }
              stage('triggerdeploy')
@@ -15,14 +20,26 @@ pipeline{
                 steps
                  { 
                     bbtriggerdeploy(JSON)
-                    
-                 }
+                    bblog(" deployment project triggered successfully for this deploymentprojectid")
+                    post{
+                       failure{
+                             bblog("deployment project is not triggered successfullyfor this deploymentprojectid ")
+                                }
+        
+                        }
             }
              stage('add label')
             {
                 steps
                  { 
                     bbaddlabelbuild(JSON)
+                    bblog("label added successfully for the project")
+                     post{
+                       failure{
+                             bblog("label not added successfully for the project ")
+                                }
+        
+                        }
                     
                  }
             }
@@ -31,6 +48,14 @@ pipeline{
                 steps
                  { 
                    bbaddcomment(JSON)
+                   bblog("comment added successfully for the project")
+                     post{
+                       failure{
+                             bblog("comment not added successfully for the project ")
+                                }
+        
+                        }
+                    
                     
                  }
             }
@@ -39,6 +64,15 @@ pipeline{
                 steps
                  { 
                    bbexecuteall(JSON)
+                    bblog("stage executed successfully for the project")
+                     post{
+                       failure{
+                             bblog("stage not executed successfully for the project ")
+                                }
+        
+                        }
+                    
+                    
                     
                  }
             }
@@ -47,16 +81,98 @@ pipeline{
                 steps
                  { 
                    bbdeleteproject(JSON)
+                    bblog("project deleted successfully")
+                     post{
+                       failure{
+                             bblog("project not deleted successfully  ")
+                                }
+        
+                        }
+                    
                     
                  }
-            }*/
-             stage('collector')
+            }
+             stage('listingplan')
             {
                 steps
                  { 
                    bamboocollectorall(JSON)
+                   bblog("plans listed successfully")
+                     post{
+                       failure{
+                             bblog("plans not listed successfully  ")
+                                }
+        
+                        }
+                    
+                    
                     
                  }
+                  stage('listingproject')
+            {
+                steps
+                 { 
+                   bamboocollectorall(JSON)
+                   bblog(" projects listed successfully")
+                     post{
+                       failure{
+                             bblog("project not  successfully  ")
+                                }
+        
+                        }
+                    
+                    
+                    
+                 }
+                  stage('deployprojectdetails')
+            {
+                steps
+                 { 
+                   bamboocollectorall(JSON)
+                   bblog("deploymentproject details is showing successfully")
+                     post{
+                       failure{
+                             bblog("deploymentproject details is not showing successfully  ")
+                                }
+        
+                        }
+                    
+                    
+                    
+                 }
+                  stage('deploymentprojectversiondetails')
+            {
+                steps
+                 { 
+                   bamboocollectorall(JSON)
+                   bblog("deploymentproject version details is showing successfully")
+                     post{
+                       failure{
+                             bblog("deploymentproject version details is not showing successfully  ")
+                                }
+        
+                        }
+                    
+                    
+                    
+                 }
+                  stage('getting latest build result')
+            {
+                steps
+                 { 
+                   bamboocollectorall(JSON)
+                   bblog("latest build result is showing successfully")
+                     post{
+                       failure{
+                             bblog("latest build result is not showing successfully  ")
+                                }
+        
+                        }
+                    
+                    
+                    
+                 }
+                 
             }
             
             }
