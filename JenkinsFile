@@ -28,6 +28,7 @@ pipeline{
         
                         }
             }
+            }
              stage('add label')
             {
                 steps
@@ -106,7 +107,7 @@ pipeline{
                         }
                     
                     
-                    
+                    }
                  }
                   stage('listingproject')
             {
@@ -116,13 +117,13 @@ pipeline{
                    bblog(" projects listed successfully")
                      post{
                        failure{
-                             bblog("project not  successfully  ")
+                             bblog("project not listed  successfully  ")
                                 }
         
                         }
                     
                     
-                    
+                    }
                  }
                   stage('deployprojectdetails')
             {
@@ -157,6 +158,7 @@ pipeline{
                     
                     
                  }
+                 }
                     stage('particular plan details')
             {
                 steps
@@ -170,7 +172,7 @@ pipeline{
         
                         }
                     
-                    
+                    }
                     
                  }
                
