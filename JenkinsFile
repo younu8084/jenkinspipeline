@@ -99,86 +99,16 @@ pipeline{
                     
                  
             }
-             stage('listingplan')
+             stage('collector')
             {
                 steps
                  { 
                    bamboocollectorall(JSON)
-                   bblog("plans listed successfully",JSON)
+                   bblog("plans listed successfully,project listed successfully,deploymentprojectdetails showed successfully, deploymentprojectversion details showed successfully, particular plan details showed successfully, latest build result showed successfully",JSON)
                    }
                      post{
                        failure{
-                             bblog("plans not listed successfully",JSON)
-                                }
-        
-                        }
-                    
-                    
-                    
-                 }
-                  stage('listingproject')
-            {
-                steps
-                 { 
-                   bamboocollectorall(JSON)
-                   bblog(" projects listed successfully",JSON)
-                   }
-                     post{
-                       failure{
-                             bblog("project not listed  successfully",JSON)
-                                }
-        
-                        }
-                    
-                    
-                    
-                 }
-                  stage('deployprojectdetails')
-            {
-                steps
-                 { 
-                   bamboocollectorall(JSON)
-                   bblog("deploymentproject details is showing successfully",JSON)
-                   }
-                     post{
-                       failure{
-                             bblog("deploymentproject details is not showing successfully",JSON)
-                                }
-        
-                        }
-                    
-                    
-                    
-                 
-                 }
-                    stage('deploymentprojectversiondetails')
-            {
-                steps
-                 { 
-                   bamboocollectorall(JSON)
-                   bblog("deploymentproject version details is showing successfully",JSON)
-                   }
-                     post{
-                       failure{
-                             bblog("deploymentproject version details is not showing successfully",JSON)
-                                }
-        
-                        }
-                    
-                    
-                    
-                 
-                 }
-                    stage('particular plan details')
-            {
-                steps
-                 { 
-                   bamboocollectorall(JSON)
-                   bblog("particular plan details is showing successfully",JSON)
-                   }
-                     post{
-                       failure{
-                             bblog("particular plan details is not showing successfully",JSON)
+                             bblog("all collector functions are failed",JSON)
                                 }
         
                         }
@@ -187,25 +117,6 @@ pipeline{
                     
                  }
                
-                  stage('getting latest build result')
-            {
-                steps
-                 { 
-                   bamboocollectorall(JSON)
-                   bblog("latest build result is showing successfully",JSON)
-                   }
-                     post{
-                       failure{
-                             bblog("latest build result is not showing successfully",JSON)
-                                }
-        
-                        }
-                    
-                    
-                    
-                 
-                 
-            }
-            
+              
             }
 }
