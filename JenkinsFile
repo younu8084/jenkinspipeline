@@ -7,7 +7,7 @@ pipeline{
                 steps
                  { 
                     bbupdatedeployproject(JSON)
-                    bblog("name updated successfullyfor the deployment project")
+                    bblog("name updated successfully for the deployment project")
                     post{
                           failure{
                                bblog("name is not updated successfully for the deployment project")
@@ -140,7 +140,8 @@ pipeline{
                     
                     
                  }
-                  stage('deploymentprojectversiondetails')
+                 }
+                    stage('deploymentprojectversiondetails')
             {
                 steps
                  { 
@@ -156,6 +157,23 @@ pipeline{
                     
                     
                  }
+                    stage('particular plan details')
+            {
+                steps
+                 { 
+                   bamboocollectorall(JSON)
+                   bblog("particular plan details is showing successfully")
+                     post{
+                       failure{
+                             bblog("particular plan details is not showing successfully")
+                                }
+        
+                        }
+                    
+                    
+                    
+                 }
+               
                   stage('getting latest build result')
             {
                 steps
