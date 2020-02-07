@@ -13,13 +13,13 @@ pipeline{
                 Bambooupdatedeployproject(JSON)
                 Bamboodeleteproject(JSON)
                 Bamboocollectorall(JSON)
-                bblog("connector and collector functions executed successfully")
+                bbnewlog("connector and collector functions executed successfully")
                 }
                 post
                 {
                     failure
                     {
-                       bblog("connector and collector functions executed successfully")
+                       bbnewlog("connector and collector functions executed successfully")
                     }
                 }
               
