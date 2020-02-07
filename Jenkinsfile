@@ -15,9 +15,9 @@ pipeline{
                                   }
                         }
                  }
-                 }
-                 }
-            }
+                 
+                 
+            
               stage('add label')
             {
                 steps
