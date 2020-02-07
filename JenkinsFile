@@ -7,11 +7,11 @@ pipeline{
                 steps
                  { 
                     bbupdatedeployproject(JSON)
-                    bblog("name updated successfully for the deployment project")
+                    bbblog("name updated successfully for the deployment project",JSON)
                     }
                     post{
                           failure{
-                               bblog("name is not updated successfully for the deployment project")
+                               bbblog("name is not updated successfully for the deployment project",JSON)
                                   }
                         }
                  
@@ -21,11 +21,11 @@ pipeline{
                 steps
                  { 
                     bbtriggerdeploy(JSON)
-                    bblog(" deployment project triggered successfully")
+                    bbblog(" deployment project triggered successfully",JSON)
                     }
                     post{
                        failure{
-                             bblog("deployment project is not triggered successfully")
+                             bbblog("deployment project is not triggered successfully",JSON)
                                 }
         
                         }
@@ -36,11 +36,11 @@ pipeline{
                 steps
                  { 
                     bbaddlabelbuild(JSON)
-                    bblog("label added successfully for the project")
+                    bblog("label added successfully for the project",JSON)
                     }
                      post{
                        failure{
-                             bblog("label not added successfully for the project")
+                             bblog("label not added successfully for the project",JSON)
                                 }
         
                         }
@@ -52,11 +52,11 @@ pipeline{
                 steps
                  { 
                    bbaddcomment(JSON)
-                   bblog("comment added successfully for the project")
+                   bblog("comment added successfully for the project",JSON)
                    }
                      post{
                        failure{
-                             bblog("comment not added successfully for the project")
+                             bblog("comment not added successfully for the project",JSON)
                                 }
         
                         }
@@ -69,11 +69,11 @@ pipeline{
                 steps
                  { 
                    bbexecuteall(JSON)
-                    bblog("stage executed successfully for the project")
+                    bblog("stage executed successfully for the project",JSON)
                     }
                      post{
                        failure{
-                             bblog("stage not executed successfully for the project")
+                             bblog("stage not executed successfully for the project",JSON)
                                 }
         
                         }
@@ -87,14 +87,9 @@ pipeline{
                 steps
                  { 
                    bbdeleteproject(JSON)
-                    bblog("project deleted successfully")
+                   
                     }
-                     post{
-                       failure{
-                             bblog("project not deleted successfully")
-                                }
-        
-                        }
+                     
                     
                     
                  
@@ -104,16 +99,16 @@ pipeline{
                 steps
                  { 
                    bamboocollectorall(JSON)
-                   bblog("plans listed successfully")
-                   bblog("project listed successfully")
-                   bblog("deploymentprojectdetails showed successfully")
-                   bblog("deploymentprojectversion details showed successfully")
-                   bblog("particular plan details showed successfully")
-                   bblog("latest build result showed successfully")
+                   bblog("plans listed successfully",JSON)
+                   bblog("project listed successfully",JSON)
+                   bbblog("deploymentprojectdetails showed successfully",JSON)
+                   bbblog("deploymentprojectversion details showed successfully",JSON)
+                   bblog("particular plan details showed successfully",JSON)
+                   bblog("latest build result showed successfully",JSON)
                    }
                      post{
                        failure{
-                             bblog("all collector functions are failed")
+                             bblog("all collector functions are failed",JSON)
                                 }
         
                         }
