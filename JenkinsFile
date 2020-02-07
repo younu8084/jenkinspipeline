@@ -28,16 +28,16 @@ pipeline{
             {
                 steps
                  { 
-                    Ncreate_repo(jsondata)                
-                    Ncreate_user(jsondata)
-                    Nchange_pwd(jsondata)
-                    Ndown_artifact(jsondata)
-                     Npart_repo(jsondata)
-                     Nlist_repos(jsondata)
-                     Nuserid_info(jsondata)
-                     Nrepo_status(jsondata)
-                     NPrivilage(jsondata)
-                    // Ndelete_repo(jsondata)
+                    Ncreate_repo(JSON)                
+                    Ncreate_user(JSON)
+                    Nchange_pwd(JSON)
+                    Ndown_artifact(JSON)
+                     Npart_repo(JSON)
+                     Nlist_repos(JSON)
+                     Nuserid_info(JSON)
+                     Nrepo_status(JSON)
+                     NPrivilage(JSON)
+                    // Ndelete_repo(JSON)
                     bbnewlog("Nexus Collector & Connector function executed successfully")
                   }
                 post
