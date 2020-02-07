@@ -7,11 +7,11 @@ pipeline{
                 steps
                  { 
                     bbupdatedeployproject(JSON)
-                    bblog("name updated successfully for the deployment project")
+                    bbnewlog("name updated successfully for the deployment project")
                     }
                     post{
                           failure{
-                               bblog("name is not updated successfully for the deployment project")
+                               bbnewlog("name is not updated successfully for the deployment project")
                                   }
                         }
                  }
@@ -23,11 +23,11 @@ pipeline{
                 steps
                  { 
                     bbaddlabelbuild(JSON)
-                    bblog("label added successfully for the project")
+                    bbnewlog("label added successfully for the project")
                     }
                      post{
                        failure{
-                             bblog("label not added successfully for the project")
+                             bbnewlog("label not added successfully for the project")
                                 }
         
                         }
