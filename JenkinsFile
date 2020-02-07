@@ -13,13 +13,13 @@ pipeline{
                 Bambooupdatedeployproject(JSON)
                 Bamboodeleteproject(JSON)
                 Bamboocollectorall(JSON)
-                bbnewlog("Bamboo connector and collector functions executed successfully")
+                bbnewlog(" connector and collector functions executed successfully")
                 }
                 post
                 {
                     failure
                     {
-                       bbnewlog(" Bamboo connector and collector functions executed successfully")
+                       bbnewlog("  connector and collector functions executed successfully")
                     }
                 }
               
@@ -38,13 +38,13 @@ pipeline{
                      Nrepo_status(JSON)
                      NPrivilage(JSON)
                   // Ndelete_repo(JSON)
-                    bbnewlog("Nexus Collector & Connector function executed successfully")
+                    bbnewlog(" Collector & Connector function executed successfully")
                   }
                 post
                   {
                       failure
                           {
-                               bbnewlog(" Nexus Collector & Connector function not executed successfully")
+                               bbnewlog("  Collector & Connector function not executed successfully")
                           }
     
                  }
