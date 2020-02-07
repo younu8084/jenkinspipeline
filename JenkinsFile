@@ -94,7 +94,7 @@ pipeline{
                     
                  
             }
-             stage('collector')
+             stage('allcollectorfunctions')
             {
                 steps
                  { 
