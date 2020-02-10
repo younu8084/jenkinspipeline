@@ -7,25 +7,25 @@ pipeline{
                 steps
                 {
                 Bambooaddcomment(JSON)
-                log_function(" BAMBOO adding comment function executed successfully")
+                log_function(" BAMBOO", "adding comment function executed successfully")
                 Bambooaddlabelbuild(JSON)
-                log_function(" BAMBOO adding label function executed successfully")
+                log_function(" BAMBOO", "adding label function executed successfully")
                 Bambooexecuteall(JSON)
-                log_function(" BAMBOO executing all stages function executed successfully")
+                log_function(" BAMBOO", "executing all stages function executed successfully")
                 Bambootriggerdeploy(JSON)
-                log_function(" BAMBOO triggering deployment project function executed successfully")
+                log_function(" BAMBOO", "triggering deployment project function executed successfully")
                 Bambooupdatedeployproject(JSON)
-                log_function(" BAMBOO name updation function in deployment project executed successfully")
+                log_function(" BAMBOO", "name updation function in deployment project executed successfully")
                 Bamboodeleteproject(JSON)
-                log_function(" BAMBOO delete project function executed successfully")
+                log_function(" BAMBOO", "delete project function executed successfully")
                 Bamboocollectorall(JSON)
-                log_function(" BAMBOO collector functions executed successfully")
+                log_function(" BAMBOO", "collector functions executed successfully")
                 }
                 post
                 {
                     failure
                     {
-                       log_function("BAMBOO connector and collector functions  not executed successfully")
+                       log_function("BAMBOO", "connector and collector functions  not executed successfully")
                     }
                 }
               
