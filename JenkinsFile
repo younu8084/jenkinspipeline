@@ -19,7 +19,7 @@ pipeline{
                 {
                     failure
                     {
-                       log("  connector and collector functions executed successfully")
+                       log("  connector and collector functions  not executed successfully")
                     }
                 }
               
