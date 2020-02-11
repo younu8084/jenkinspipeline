@@ -8,8 +8,9 @@ pipeline{
                   {
                     //lastsuccessfulbuild(JSON)
                    // moveinflux(JSON)
-                    azurecollect()
-                    azureinflux()
+                  //  azurecollect()
+                  //  azureinflux()
+                    repo()
                   }
             }
   }
