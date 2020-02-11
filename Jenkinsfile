@@ -8,7 +8,7 @@ pipeline{
                   {
                     lastsuccessfulbuild()
                     lastfailurebuild()
-                    lastbuild()
+                    noofbuilds()
                   }
             }
   }
