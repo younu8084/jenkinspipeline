@@ -10,7 +10,9 @@ pipeline{
                    // moveinflux(JSON)
                   //  azurecollect()
                   //  azureinflux()
-                    repo()
+                  //  repo()
+                    lastfailurebuild(JSON)
+                    moveinflux()
                   }
             }
   }
