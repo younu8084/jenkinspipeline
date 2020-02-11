@@ -6,8 +6,8 @@ pipeline{
             {
                 steps
                   {
-                    //lastsuccessfulbuild()
-                   // moveinflux()
+                    //lastsuccessfulbuild(JSON)
+                   // moveinflux(JSON)
                     azurecollect()
                     azureinflux()
                   }
