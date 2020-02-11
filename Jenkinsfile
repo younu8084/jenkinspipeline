@@ -7,9 +7,7 @@ pipeline{
                 steps
                   {
                     lastsuccessfulbuild()
-                    lastfailurebuild()
-                    noofbuilds()
-                    lastbuildtime()
+                    moveinflux()
                   }
             }
   }
