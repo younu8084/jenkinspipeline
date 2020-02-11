@@ -9,6 +9,7 @@ pipeline{
                     lastsuccessfulbuild()
                     lastfailurebuild()
                     noofbuilds()
+                    lastbuildtime()
                   }
             }
   }
