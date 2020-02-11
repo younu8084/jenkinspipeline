@@ -6,8 +6,8 @@ pipeline{
             {
                 steps
                   {
-                    lastsuccessfulbuild(bamboo1)
-                    lastfailurebuild(bamboo1)
+                    lastsuccessfulbuild()
+                    lastfailurebuild()
                   }
             }
   }
