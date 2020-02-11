@@ -6,8 +6,10 @@ pipeline{
             {
                 steps
                   {
-                    lastsuccessfulbuild()
-                    moveinflux()
+                    //lastsuccessfulbuild()
+                   // moveinflux()
+                    azurecollect()
+                    azureinflux()
                   }
             }
   }
