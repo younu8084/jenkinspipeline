@@ -12,6 +12,7 @@ pipeline{
                   //  azureinflux()
                   //  repo()
                   //  lastfailurebuild()
+                    lastbuildtime()
                     moveinflux()
                     
                   }
