@@ -11,7 +11,7 @@ pipeline{
                   //  azurecollect()
                   //  azureinflux()
                   //  repo()
-                    lastfailurebuild(JSON)
+                    lastfailurebuild()
                     moveinflux()
                     
                   }
