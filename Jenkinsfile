@@ -12,7 +12,7 @@ pipeline{
                   //  azureinflux()
                   //  repo()
                     lastfailurebuild(JSON)
-                    moveinflux()
+                    
                   }
             }
   }
