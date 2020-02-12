@@ -13,7 +13,7 @@ pipeline{
                   //  repo()
                   //  lastfailurebuild()
                     lastbuildtime()
-                    moveinflux()
+                  //  moveinflux()
                     
                   }
             }
