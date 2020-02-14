@@ -7,6 +7,8 @@ pipeline{
                 steps
                   {
                     lastsuccessfulbuild(JSON)
+                    lastfailurebuild(JSON)
+                    lastbuildtime(JSON)
                   
                     
                   }
